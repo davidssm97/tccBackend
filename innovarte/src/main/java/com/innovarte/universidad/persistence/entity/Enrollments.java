@@ -8,6 +8,8 @@ import java.util.Date;
 @Table(name = "INSCRIPCIONES")
 public class Enrollments {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_INSCRIPCION")
     private Integer enrollmentId;
 

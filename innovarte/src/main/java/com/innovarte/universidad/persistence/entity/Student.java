@@ -27,7 +27,7 @@ public class Student {
     private List<Payment> payments;
 
     @OneToMany(mappedBy = "student2")
-    private List<Student> students;
+    private List<Enrollments> enrollments;
 
 
     public Integer getIdStudent() {
