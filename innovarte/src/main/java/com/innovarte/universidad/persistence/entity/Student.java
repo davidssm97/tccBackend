@@ -3,6 +3,7 @@ package com.innovarte.universidad.persistence.entity;
 import jakarta.persistence.*;
 
 import java.sql.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "ESTUDIANTES")
@@ -21,6 +22,12 @@ public class Student {
 
     @Column(name = "EMAIL")
     private String email;
+
+    @OneToMany(mappedBy = "student")
+    private List<Payment> payments;
+
+    @OneToMany(mappedBy = "student2")
+    private List<Student> students;
 
 
     public Integer getIdStudent() {

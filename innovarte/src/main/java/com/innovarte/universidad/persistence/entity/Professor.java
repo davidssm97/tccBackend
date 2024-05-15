@@ -1,6 +1,8 @@
 package com.innovarte.universidad.persistence.entity;
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "PROFESORES")
 public class Professor {
@@ -18,6 +20,12 @@ public class Professor {
 
     @Column(name = "EMAIL")
     private String email;
+
+    @OneToMany(mappedBy = "professor")
+    private List<Assignments> assignments;
+
+    @OneToMany(mappedBy = "professor2")
+    private List<Classes> classes;
 
     public Integer getIdProfesor() {
         return idProfesor;
