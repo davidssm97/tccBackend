@@ -2,6 +2,8 @@ package com.innovarte.universidad.persistence.crud;
 
 import com.innovarte.universidad.persistence.entity.Student;
 import org.springframework.data.repository.CrudRepository;
+import com.innovarte.universidad.persistence.entity.Assignments;
+
 
 import java.util.Date;
 import java.util.List;
@@ -12,6 +14,10 @@ public interface StudentCrudRepository extends CrudRepository<Student, Integer> 
     List<Student> findByIdStudentOrderByNameAsc(int idStudent);
 
     Optional<List<Student>> findByDateOfBirthLessThanAndEmail(Date dateOfBirth, String email);
+
+
+
+
 
 }
 

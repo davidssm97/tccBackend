@@ -27,8 +27,8 @@ public class Assignments {
     private Professor professor;
 
     @ManyToOne
-    @JoinColumn(name = "ID_CLASE", insertable = false,updatable = false)
-    private Classes clases2;
+    @JoinColumn(name = "ID_CLASE", referencedColumnName = "ID_CLASE", insertable = false, updatable = false)
+    private Classes classes;
 
     public Integer getAssignmentId() {
         return assignmentId;

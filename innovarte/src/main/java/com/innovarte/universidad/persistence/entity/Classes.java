@@ -30,10 +30,10 @@ public class Classes {
     @JoinColumn(name = "ID_ASIGNATURA", insertable = false, updatable = false)
     private Subject subject;
 
-    @OneToMany(mappedBy = "clases2")
-    private List<Assignments> assignments2;
+    @OneToMany(mappedBy = "classes")
+    private List<Assignments> assignments;
 
-    @OneToMany(mappedBy = "classes3")
+    @OneToMany(mappedBy = "classes")
     private List<Enrollments> enrollments;
 
     public Integer getIdClase() {

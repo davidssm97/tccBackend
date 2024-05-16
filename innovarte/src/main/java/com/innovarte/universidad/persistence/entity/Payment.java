@@ -31,7 +31,7 @@ public class Payment {
     private String Status;
 
     @ManyToOne
-    @JoinColumn(name = "ID_ESTUDIANTE", insertable = false, updatable = false)
+    @JoinColumn(name = "ID_ESTUDIANTE", referencedColumnName = "ID_ESTUDIANTE", insertable = false, updatable = false)
     private Student student;
 
 

@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>StudentRepository.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+StudentRepository.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">innovarte</span><span class="s2">.</span><span class="s1">universidad</span><span class="s2">.</span><span class="s1">persistence</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">com</span><span class="s2">.</span><span class="s1">innovarte</span><span class="s2">.</span><span class="s1">universidad</span><span class="s2">.</span><span class="s1">persistence</span><span class="s2">.</span><span class="s1">crud</span><span class="s2">.</span><span class="s1">StudentCrudRepository</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">com</span><span class="s2">.</span><span class="s1">innovarte</span><span class="s2">.</span><span class="s1">universidad</span><span class="s2">.</span><span class="s1">persistence</span><span class="s2">.</span><span class="s1">entity</span><span class="s2">.</span><span class="s1">Student</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Date</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">List</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Optional</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">StudentRepository </span><span class="s2">{</span>
+    <span class="s1">StudentCrudRepository studentCrudRepository</span><span class="s2">;</span>
+
+    <span class="s0">public </span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Student</span><span class="s2">&gt; </span><span class="s1">getAll</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s2">(</span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Student</span><span class="s2">&gt;) </span><span class="s1">studentCrudRepository</span><span class="s2">.</span><span class="s1">findAll</span><span class="s2">();</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Student</span><span class="s2">&gt; </span><span class="s1">getByIdStudent</span><span class="s2">(</span><span class="s0">int </span><span class="s1">idStudent</span><span class="s2">) {</span>
+        <span class="s0">return </span><span class="s1">studentCrudRepository</span><span class="s2">.</span><span class="s1">findByIdStudentOrderByNameAsc</span><span class="s2">(</span><span class="s1">idStudent</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">Optional</span><span class="s2">&lt;</span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Student</span><span class="s2">&gt;&gt; </span><span class="s1">getEstudents</span><span class="s2">(</span><span class="s1">Date dateOfBirth</span><span class="s2">, </span><span class="s1">String email</span><span class="s2">) {</span>
+        <span class="s0">return </span><span class="s1">studentCrudRepository</span><span class="s2">.</span><span class="s1">findByDateOfBirthLessThanAndEmail</span><span class="s2">(</span><span class="s1">dateOfBirth</span><span class="s2">, </span><span class="s1">email</span><span class="s2">);</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

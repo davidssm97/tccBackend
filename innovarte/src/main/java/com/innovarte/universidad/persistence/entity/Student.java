@@ -26,7 +26,7 @@ public class Student {
     @OneToMany(mappedBy = "student")
     private List<Payment> payments;
 
-    @OneToMany(mappedBy = "student2")
+    @OneToMany(mappedBy = "student")
     private List<Enrollments> enrollments;
 
 

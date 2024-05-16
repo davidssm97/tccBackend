@@ -23,12 +23,12 @@ public class Enrollments {
     private Date enrollmentDate;
 
     @ManyToOne
-    @JoinColumn(name = "ID_ESTUDIANTE", insertable = false, updatable = false)
-    private Student student2;
+    @JoinColumn(name = "ID_ESTUDIANTE", referencedColumnName = "ID_ESTUDIANTE", insertable = false, updatable = false)
+    private Student student;
 
     @ManyToOne
-    @JoinColumn(name = "ID_CLASE", insertable = false,updatable = false)
-    private Classes classes3;
+    @JoinColumn(name = "ID_CLASE", referencedColumnName = "ID_CLASE", insertable = false, updatable = false)
+    private Classes classes;
 
 
 
